@@ -1,0 +1,25 @@
+swagger: 2.0 
+
+# open api definicion de gm_analytics API
+info:
+    title: gm_analytics API
+    version: 0.1.0
+
+paths:
+    /repos/{repo}/collabs/{collaborator}/commits:
+            get:
+               operationId: gm_analytics.handlers.get_commits
+               summary: Return collaborator commits
+               parameters:
+                   - name: repo
+                     in: path
+                     required: true
+                     type: string
+                     format: path
+                   - name: collaborator
+                     in: path
+                     requiered: true
+                     type: string
+                     format: path
+               # responses:
+               # 200:
