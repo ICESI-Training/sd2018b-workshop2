@@ -1,1 +1,1 @@
-# sd2018b-workshop2
+# so-microservices-python-part2
