@@ -1,4 +1,5 @@
 # Compiler files
+.pyc
 __pycache__
 
 # Test files
