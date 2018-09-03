@@ -11,5 +11,5 @@ def get_commits_infoUser(organization=None, repository=None, usrName=None):
     logging.debug('organization=%s', organization)
     logging.debug('repository=%s', repository)
     logging.debug('usrName=%s', usrName)
-    return [{'org_info':organization, 'repos_info':repository, 'usr_info':usrName},
-            {'org_info':organization, 'repos_info':repository, 'usr_info':usrName}]
+    return [{'commit_org_info':1, 'repos_info':repository, 'usr_info':usrName},
+            {'commit_org_info':1, 'repos_info':repository, 'usr_info':usrName}]
