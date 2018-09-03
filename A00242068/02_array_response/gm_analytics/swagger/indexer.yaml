@@ -25,7 +25,7 @@ paths:
               user_info:
                 type: string
                 description: User information
-  /organizations{org}/repositories{repos}/user{usr}/commits:
+   /users/{username}/commits:
     get:
       x-swagger-router-controller: gm_analytics
       operationId: handlers.get_commits_info
@@ -46,6 +46,34 @@ paths:
             type: array
             items:
               $ref: '#/definitions/Item'
+   /organizations{organization}/repositories{repository}/users{usrName}/commits:
+    get:
+      x-swagger-router-controller: gm_analytics
+      operationId: handlers.get_commits_infoUser
+      summary: Returns user commits_count.
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          type: string
+          format: path
+        - name: repository
+          in: path
+          required: true
+          type: string
+          format: path
+        - name: usrName
+          in: path
+          required: true
+          type: string
+          format: path
+      responses:
+        200:
+          description: Successful response.
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Item1'
 
 definitions:
   Item:
@@ -54,4 +82,14 @@ definitions:
       commits_count:
         type: integer
       yyyymmdd_date:
+        type: string
+        
+  Item1:
+    type: object
+    properties:
+      commit_org_info:
+        type: integer
+      description:
+        type: string
+      usr_info:
         type: string
